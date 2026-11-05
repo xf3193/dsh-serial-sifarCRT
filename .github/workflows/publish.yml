@@ -3,6 +3,7 @@ name: Publish to npm
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,14 +12,14 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: npm
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
-      - name: Publish
+      - name: Publish (skipped when the NPM_TOKEN secret is not configured)
+        if: env.NODE_AUTH_TOKEN != ''
         run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
