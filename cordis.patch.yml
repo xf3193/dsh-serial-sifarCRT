@@ -1,0 +1,5 @@
+# dsh-serial-sifarCRT bundle patch: one Host row. The row name resolves from the
+# profile's own node_modules, where this package is installed.
+- insert:
+    - id: dsh-serial-sifarcrt
+      name: dsh-serial-sifarcrt

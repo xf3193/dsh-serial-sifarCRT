@@ -1,0 +1,80 @@
+{
+  "name": "dsh-serial-sifarcrt",
+  "version": "1.0.0",
+  "description": "dsh-serial-sifarCRT — a SecureCRT-style Windows serial debug console in the DeepSeek Harness right sidebar: auto-enumerated COM ports, ANSI color logs, an in-log Linux terminal, command buttons, multi-port tabs and log export.",
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": "^0.2.1-rc.1"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "locale",
+    "assets",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "serial",
+    "serialport",
+    "uart",
+    "com-port",
+    "debugger",
+    "terminal",
+    "securecrt",
+    "windows"
+  ],
+  "license": "MIT",
+  "author": "sifarCRT contributors",
+  "os": [
+    "win32"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xf3193/dsh-serial-sifarCRT.git"
+  },
+  "homepage": "https://github.com/xf3193/dsh-serial-sifarCRT#readme",
+  "bugs": {
+    "url": "https://github.com/xf3193/dsh-serial-sifarCRT/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

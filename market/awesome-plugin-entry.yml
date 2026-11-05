@@ -1,0 +1,19 @@
+﻿# Submission entry for the awesome-dsh-plugin registry (which feeds dsh-market).
+#
+# Copy this file into a fork of https://github.com/awesome-dsh-plugin/awesome-dsh-plugin as:
+#     data/plugins/OWNER__dsh-serial-sifarCRT.yml
+# then open one PR. Do not edit the generated READMEs.
+#
+# `category` must be one of the registry's categories; `tools` fits a serial
+# debugger best (the older dsh-serial-debugger entry uses it too).
+# `description.en` must be a truthful one-line description ending with a period.
+# Replace xf3193 here if you publish under a different GitHub user/org (scripts/set-owner.mjs does it).
+
+url: https://github.com/xf3193/dsh-serial-sifarCRT
+name: xf3193/dsh-serial-sifarCRT
+category: tools
+description:
+  en: 'Windows serial debug console in the DSH right sidebar: port settings, ANSI color logs, an in-log Linux command line, editable command buttons, multi-port tabs and log export.'
+  zh: 'DSH 鍙充晶鏍忕殑 Windows 涓插彛璋冭瘯鍙帮細涓插彛璁剧疆銆丄NSI 褰╄壊鏃ュ織銆佹棩蹇楀唴 Linux 鍛戒护琛屻€佸彲缂栬緫鍛戒护鎸夐挳銆佸涓插彛鏍囩椤典笌鏃ュ織瀵煎嚭銆?
+icon: https://raw.githubusercontent.com/xf3193/dsh-serial-sifarCRT/main/assets/icon-180.png
+

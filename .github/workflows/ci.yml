@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax check
+        run: |
+          node --check lib/index.js
+          node --check lib/client.js
+          node --check scripts/add-topics.mjs
+          node --check scripts/set-owner.mjs
+      - name: Manifest sanity
+        run: |
+          node -e "const p=require('./package.json'); if(!p.dsh?.bundle?.patch) throw new Error('dsh.bundle missing'); if(!p.dsh?.client) throw new Error('dsh.client missing'); if(p.name!=='dsh-serial-sifarcrt') throw new Error('unexpected package name')"
+      - name: Pack (dry run)
+        run: npm pack --dry-run

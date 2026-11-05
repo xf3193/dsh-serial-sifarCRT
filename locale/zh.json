@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "dsh-serial-sifarCRT",
+    "description": "右侧栏 SecureCRT 风格 Windows 串口调试台：自动枚举串口、ANSI 彩色日志、日志内 Linux 命令行（历史与 Ctrl+C 中断）、可编辑命令按钮、多串口标签页与日志导出。"
+  }
+}
