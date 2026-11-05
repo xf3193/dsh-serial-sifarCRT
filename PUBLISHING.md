@@ -1,4 +1,4 @@
-﻿# Publishing dsh-serial-sifarCRT (GitHub + npm + dsh-market)
+# Publishing dsh-serial-sifarCRT (GitHub + npm + dsh-market)
 
 This is the checklist for turning this directory into a public plugin in
 **dsh-market**, the community market that ships as `dshmarket` and is driven by
