@@ -8,6 +8,10 @@ A SecureCRT-style **Windows serial debug console** that lives in the DeepSeek Ha
 
 > 中文简介见下方「中文说明」。
 
+![sifarCRT in the DSH right sidebar: ANSI-colored serial log, in-log # terminal, command buttons and log search](docs/screenshot.png)
+
+<sub>sifarCRT connected to a board: per-line ANSI colors (`[I]` cyan, `[D]` green, `[E]` red, plain kernel lines white), the in-log `#` terminal with blinking caret, command buttons, and the keyword log search row.</sub>
+
 ## Features
 
 - **Right sidebar panel** — registered as a native right-sidebar tab type (`sifarCRT` in the right column's guide). Opening it does not replace the built-in right-sidebar pages.

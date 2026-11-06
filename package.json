@@ -38,6 +38,7 @@
     "lib",
     "locale",
     "assets",
+    "docs/screenshot.png",
     "cordis.patch.yml",
     "icon.svg",
     "README.md",
