@@ -1,6 +1,6 @@
 {
   "name": "dsh-serial-sifarcrt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dsh-serial-sifarCRT — a SecureCRT-style Windows serial debug console in the DeepSeek Harness right sidebar: auto-enumerated COM ports, ANSI color logs, an in-log Linux terminal, command buttons, multi-port tabs and log export.",
   "type": "module",
   "main": "lib/index.js",

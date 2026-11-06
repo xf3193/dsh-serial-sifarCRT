@@ -13,8 +13,8 @@ awesome-dsh-plugin 的 CI 要求仓库创建满 **1 天**，即最早在
 - [ ] `package.json` 里有 **`dsh.bundle.patch`**（本仓库有：`./cordis.patch.yml`）
 - [ ] 仓库根目录有 `cordis.patch.yml`
 - [ ] 仓库「About」里的描述可以保持 `dsh-serial-sifarCRT`
-- [ ] （推荐）在 GitHub 上从 `v1.0.0` 标签创建一次 **Release**：
-      仓库 → Releases → Draft a new release → 选择 `v1.0.0` → 发布（内容可复制 README 摘要）。
+- [ ] （推荐）在 GitHub 上从 `v1.0.1` 标签创建一次 **Release**：
+      仓库 → Releases → Draft a new release → 选择 `v1.0.1` → 发布（内容可复制 README 摘要）。
       这样非 npm 安装者也有稳定的 release tarball 可用；不做也不影响收录。
 
 ## 1. Fork 注册表仓库

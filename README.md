@@ -12,8 +12,9 @@ A SecureCRT-style **Windows serial debug console** that lives in the DeepSeek Ha
 
 - **Right sidebar panel** — registered as a native right-sidebar tab type (`sifarCRT` in the right column's guide). Opening it does not replace the built-in right-sidebar pages.
 - **Serial settings dialog** — a gear button opens one dialog with port (auto-enumerated, with adapter descriptions), baud rate (editable, presets 9600 / 115200 / 1500000, default 1500000, valid 50–1500000), parity (default None), flow control (default 无/None), data bits and stop bits. Confirm, then Connect/Disconnect from the toolbar.
-- **ANSI colors** — Linux ANSI SGR sequences such as `ESC[0m`, `ESC[36;22m` and `ESC[7m` are parsed and rendered (16 / 256 / truecolor, bold, dim, italic, underline, reverse, hidden). Other cursor/clear control sequences are hidden instead of shown as garbage. A streaming parser keeps state across serial chunks.
-- **In-log Linux terminal** — click the log pane and type directly: green `#` prompt with caret, `Enter` sends (an empty Enter sends a bare CR so the board prints its prompt), `Backspace`, `↑/↓` command history, `Ctrl+V` paste (multi-line paste sends line by line), `Escape` to leave the keyboard. `Ctrl+C` sends a single `0x03` (ETX) to interrupt a foreground program such as `top`; with text selected it copies instead.
+- **ANSI colors** — Linux ANSI SGR sequences such as `ESC[0m`, `ESC[36;22m` and `ESC[7m` are parsed and rendered (16 / 256 / truecolor, bold, dim, italic, underline, reverse, hidden). Colors are applied **per log line**: the color set at the start of a line colors that line, while lines with no ANSI (kernel/plain output) use the default text color — no bleed-over into following lines. Other cursor/clear control sequences are hidden instead of shown as garbage. A streaming parser keeps state across serial chunks.
+- **In-log Linux terminal** — click the log pane and type directly: green `#` prompt with a blinking caret, `Enter` sends (an empty Enter sends a bare CR so the board prints its prompt), `Backspace`, `↑/↓` command history, `Ctrl+V` paste (multi-line paste sends line by line), `Escape` to leave the keyboard. `Ctrl+C` sends a single `0x03` (ETX) to interrupt a foreground program such as `top`; with text selected it copies instead.
+- **Keyword search** — a search box highlights every match in the visible log (current match emphasized), with 上一个/下一个 navigation, an `n/m` counter and a clear button. `Enter` goes to the next match, `Shift+Enter` to the previous, `Escape` clears; navigating centers the match and pauses auto-follow.
 - **Log scrolling that stays out of the way** — pressing the left mouse button in the log pauses auto-follow while data keeps arriving; releasing at the bottom resumes. Dragging the scrollbar up keeps the old view without jumping on new data; scrolling back to the bottom, pressing `Enter`, or clicking “已暂停 · 跟随最新” resumes.
 - **Command buttons** — user-defined command chips that send a stored command with its own line ending; add, edit and delete them (double-click or right-click a chip). Kept per tab in `localStorage`.
 - **Copy / save** — select text to copy, or copy the whole visible log; export the current tab as a plain-text `.log` file. Locally sent bytes are not echoed into the log — the board's own tty echo is what you see, exactly like SecureCRT.
@@ -44,7 +45,7 @@ dsh plugin --profile web add github:xf3193/dsh-serial-sifarCRT
 
 ```sh
 npm pack
-dsh plugin --profile web add ./dsh-serial-sifarcrt-1.0.0.tgz
+dsh plugin --profile web add ./dsh-serial-sifarcrt-1.0.1.tgz
 ```
 
 Replace `web` with your profile name (Desktop users: install from **Settings → Plugins** instead). After installation, refresh the DSH page once and open the right sidebar → **sifarCRT** in the guide.
