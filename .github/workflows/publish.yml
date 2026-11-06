@@ -11,6 +11,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
+      # `secrets.X` is empty/undefined until configured; evaluate the presence
+      # as a real boolean string so the skip guard works (undefined != '' is
+      # true in GitHub expressions, which is what made the old tag-triggered
+      # publish run and fail with ENEEDAUTH).
+      HAS_NPM_TOKEN: ${{ secrets.NPM_TOKEN != '' }}
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -19,8 +24,8 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org
       - name: Publish (requires the NPM_TOKEN repository secret)
-        if: env.NODE_AUTH_TOKEN != ''
+        if: env.HAS_NPM_TOKEN == 'true'
         run: npm publish --access public --provenance
       - name: Explain when the secret is missing
-        if: env.NODE_AUTH_TOKEN == ''
-        run: echo "Add the NPM_TOKEN repository secret (GitHub Settings -> Secrets and variables -> Actions) to enable npm publishing."
+        if: env.HAS_NPM_TOKEN != 'true'
+        run: echo "Add the NPM_TOKEN repository secret (GitHub Settings -> Secrets and variables -> Actions) before running this workflow."
