@@ -51,7 +51,7 @@ npm pack
 DSH to be sure:
 
 ```powershell
-dsh plugin --profile web add .\dsh-serial-sifarcrt-1.0.2.tgz
+dsh plugin --profile web add .\dsh-serial-sifarcrt-1.0.3.tgz
 ```
 
 Refresh the DSH page, open the right sidebar 鈫?`sifarCRT`, connect a COM port and
@@ -63,7 +63,7 @@ send a command. Remove it again for a clean state if you like:
 ```powershell
 git init
 git add -A
-git commit -m "dsh-serial-sifarCRT 1.0.2"
+git commit -m "dsh-serial-sifarCRT 1.0.3"
 git branch -M main
 git remote add origin https://github.com/xf3193/dsh-serial-sifarCRT.git
 git push -u origin main
@@ -137,8 +137,8 @@ Notes:
 ## 6. Cut a GitHub release (optional, useful fallback)
 
 ```powershell
-git tag v1.0.2
-git push origin v1.0.2
+git tag v1.0.3
+git push origin v1.0.3
 ```
 
 Create a release from that tag (notes + the packed tarball). The market tries
@@ -178,7 +178,7 @@ appears in dsh-market (Discover) and in the format-1 index at
 ## 9. Remove / rollback
 
 - `dsh plugin --profile web remove dsh-serial-sifarcrt`
-- npm: `npm unpublish dsh-serial-sifarcrt@1.0.2` only within 72h and only if
+- npm: `npm unpublish dsh-serial-sifarcrt@1.0.3` only within 72h and only if
   nothing depends on it; prefer `npm deprecate` afterwards.
 - Registry: the maintainers remove entries whose repo disappears or goes dormant.
 

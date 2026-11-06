@@ -49,7 +49,7 @@ dsh plugin --profile web add github:xf3193/dsh-serial-sifarCRT
 
 ```sh
 npm pack
-dsh plugin --profile web add ./dsh-serial-sifarcrt-1.0.2.tgz
+dsh plugin --profile web add ./dsh-serial-sifarcrt-1.0.3.tgz
 ```
 
 Replace `web` with your profile name (Desktop users: install from **Settings → Plugins** instead). After installation, refresh the DSH page once and open the right sidebar → **sifarCRT** in the guide.
