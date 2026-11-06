@@ -127,8 +127,9 @@ Notes:
 
 - `publishConfig` already pins `registry.npmjs.org` and `access: public`.
 - Do not commit tokens. For CI publishing, add an npm automation token as the
-  repository secret `NPM_TOKEN`; `.github/workflows/publish.yml` publishes on a
-  `v*` tag.
+  repository secret `NPM_TOKEN`, then run the **Publish to npm** workflow manually
+  from the Actions tab (`.github/workflows/publish.yml` is `workflow_dispatch`).
+  Tag pushes no longer trigger it, so a missing secret cannot turn a release red.
 - If the name is taken, publish under a scope (`@your-name/dsh-serial-sifarcrt`),
   then change `name`, the client bundle id (`window.__ModuleLoader__.load({id})`),
   `cordis.patch.yml`, and the install commands to match.
